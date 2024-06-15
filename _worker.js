@@ -1,25 +1,63 @@
 
 // 部署完成后在网址后面加上这个，获取自建节点和机场聚合节点，/?token=auto或/auto或
 
-let mytoken = 'auto'; //可以随便取，或者uuid生成，https://1024tools.com/uuid
+let mytoken = '25a77abd-ce72-4d6c-8297-d063a9645091'; //可以随便取，或者uuid生成，https://1024tools.com/uuid
 let BotToken =''; //可以为空，或者@BotFather中输入/start，/newbot，并关注机器人
 let ChatID =''; //可以为空，或者@userinfobot中获取，/start
 let TG = 0; //小白勿动， 开发者专用，1 为推送所有的访问信息，0 为不推送订阅转换后端的访问信息与异常访问
-let FileName = 'CF-Workers-SUB';
+let FileName = 'kuailian VPN';
 let SUBUpdateTime = 6; //自定义订阅更新时间，单位小时
-let total = 99;//TB
+let total = 999;//PB
 let timestamp = 4102329600000;//2099-12-31
 
 //节点链接 + 订阅链接
 let MainData = `
-vless://b7a392e2-4ef0-4496-90bc-1c37bb234904@cf.090227.xyz:443?encryption=none&security=tls&sni=edgetunnel-2z2.pages.dev&fp=random&type=ws&host=edgetunnel-2z2.pages.dev&path=%2F%3Fed%3D2048#%E5%8A%A0%E5%85%A5%E6%88%91%E7%9A%84%E9%A2%91%E9%81%93t.me%2FCMLiussss%E8%A7%A3%E9%94%81%E6%9B%B4%E5%A4%9A%E4%BC%98%E9%80%89%E8%8A%82%E7%82%B9
-https://sub.xf.free.hr/auto
-https://WARP.fxxk.dedyn.io/auto
+hysteria2://1e7209b2-adfb-46b2-b06c-04c5e69dd625@129.153.75.202:443/?insecure=1&sni=www.bing.com#🇺🇸US1
+hysteria2://1e7209b2-adfb-46b2-b06c-04c5e69dd625@129.153.80.156:443/?insecure=1&sni=www.bing.com#🇺🇸US2
+hysteria2://1e7209b2-adfb-46b2-b06c-04c5e69dd625@158.101.37.59:443/?insecure=1&sni=www.bing.com#🇺🇸US3
+hysteria2://1e7209b2-adfb-46b2-b06c-04c5e69dd625@129.146.249.162:443/?insecure=1&sni=www.bing.com#🇺🇸US4
+hysteria2://1e7209b2-adfb-46b2-b06c-04c5e69dd625@205.178.183.33:443/?insecure=1&sni=www.microsoft.com#🇯🇵JP01
+hysteria2://1e7209b2-adfb-46b2-b06c-04c5e69dd625@205.178.183.164:443/?insecure=1&sni=www.microsoft.com#🇸🇬SG01-gpt
+hysteria2://1e7209b2-adfb-46b2-b06c-04c5e69dd625@62.210.71.30:443/?insecure=1&sni=www.microsoft.com#🇫🇷FR
+hysteria2://1e7209b2-adfb-46b2-b06c-04c5e69dd625@129.151.193.163:443/?insecure=1&sni=www.microsoft.com#🇸🇪SE
+hysteria2://1e7209b2-adfb-46b2-b06c-04c5e69dd625@138.2.179.192:443/?insecure=1&sni=www.bing.com#🇩🇪DE01
+hysteria2://1e7209b2-adfb-46b2-b06c-04c5e69dd625@152.70.176.68:443/?insecure=1&sni=www.bing.com#🇩🇪DE02
+hysteria2://1e7209b2-adfb-46b2-b06c-04c5e69dd625@168.75.85.171:443/?insecure=1&sni=www.microsoft.com#🇧🇷BR
+hysteria2://1e7209b2-adfb-46b2-b06c-04c5e69dd625@207.211.179.132:443/?insecure=1&sni=www.bing.com#🇺🇸US04
+hysteria2://1e7209b2-adfb-46b2-b06c-04c5e69dd625@139.185.32.100:443/?insecure=1&sni=www.hoyoverse.com#🇦🇪AE01
+hysteria2://1e7209b2-adfb-46b2-b06c-04c5e69dd625@139.185.34.29:443/?insecure=1&sni=www.hoyoverse.com#🇦🇪AE02
+hysteria2://1e7209b2-adfb-46b2-b06c-04c5e69dd625@146.56.114.61:443/?insecure=1&sni=www.hoyoverse.com#🇰🇷KR01
+hysteria2://1e7209b2-adfb-46b2-b06c-04c5e69dd625@158.180.71.143:443/?insecure=1&sni=www.hoyoverse.com#🇰🇷KR02
+hysteria2://1e7209b2-adfb-46b2-b06c-04c5e69dd625@192.9.186.104:443/?insecure=1&sni=www.hoyoverse.com#🇦🇺AU01
+hysteria2://1e7209b2-adfb-46b2-b06c-04c5e69dd625@152.69.186.200:443/?insecure=1&sni=www.hoyoverse.com#🇦🇺AU02
+hysteria2://1e7209b2-adfb-46b2-b06c-04c5e69dd625@144.24.99.141:443/?insecure=1&sni=www.hoyoverse.com#🇮🇳IN01
+hysteria2://1e7209b2-adfb-46b2-b06c-04c5e69dd625@144.24.146.216:443/?insecure=1&sni=www.hoyoverse.com#🇮🇳IN02
+hysteria2://1e7209b2-adfb-46b2-b06c-04c5e69dd625@132.145.52.10:443/?insecure=1&sni=www.microsoft.com#🇬🇧GB01
+hysteria2://1e7209b2-adfb-46b2-b06c-04c5e69dd625@132.145.28.17:443/?insecure=1&sni=www.microsoft.com#🇬🇧GB02
+hysteria2://1e7209b2-adfb-46b2-b06c-04c5e69dd625@129.151.169.64:443/?insecure=1&sni=www.microsoft.com#🇿🇦ZA
+vless://1e7209b2-adfb-46b2-b06c-04c5e69dd625@77.75.199.163:443?encryption=none&security=tls&fp=chrome&type=ws&host=djjchk1.djjc.sbs&path=%2Fdjjc%2Fhk1#%F0%9F%87%AD%F0%9F%87%B0%E9%A6%99%E6%B8%AF1%E5%8F%B7-0.1%E5%80%8D
+vless://1e7209b2-adfb-46b2-b06c-04c5e69dd625@77.75.199.163:443?encryption=none&security=tls&fp=chrome&type=ws&host=djjchk1.djjc.sbs&path=%2Fdjjc%2Fhk1#%F0%9F%87%AD%F0%9F%87%B0%E9%A6%99%E6%B8%AF2%E5%8F%B7-0.1%E5%80%8D
+vless://1e7209b2-adfb-46b2-b06c-04c5e69dd625@152.67.219.54:443?encryption=none&flow=xtls-rprx-vision&security=tls&sni=a9e9-de2f1o2.xn--4gq62f52gopi49k.com&fp=chrome&type=tcp&headerType=none#%F0%9F%87%B0%F0%9F%87%B7%E9%9F%A9%E5%9B%BD%E6%98%A5%E5%B7%9D-1%E5%80%8D
+vless://1e7209b2-adfb-46b2-b06c-04c5e69dd625@178.173.236.233:443?encryption=none&flow=xtls-rprx-vision&security=tls&sni=djdownloadhk.xn--4gq62f52gopi49k.com&fp=safari&type=tcp&headerType=none#%F0%9F%87%AD%F0%9F%87%B0%E9%A6%99%E6%B8%AF-1%E5%80%8D
+vless://1e7209b2-adfb-46b2-b06c-04c5e69dd625@5.104.107.143:443?encryption=none&flow=xtls-rprx-vision&security=tls&sni=a9e9-db2f1e2.xn--4gq62f52gopi49k.com&fp=chrome&type=tcp&headerType=none#%F0%9F%87%A9%F0%9F%87%AA%E5%BE%B7%E5%9B%BD-1%E5%80%8D
+vless://1e7209b2-adfb-46b2-b06c-04c5e69dd625@77.75.199.163:443?encryption=none&security=tls&sni=k12us1.djjc.sbs&fp=safari&type=ws&host=k12us1.djjc.sbs&path=%2Fdjjc%2Fus1#%F0%9F%87%BA%F0%9F%87%B8%E7%BE%8E%E5%9B%BD1%E5%8F%B7-0.1%E5%80%8D
+vless://1e7209b2-adfb-46b2-b06c-04c5e69dd625@77.75.199.163:443?encryption=none&security=tls&sni=k4us2.djjc.sbs&fp=ios&type=ws&host=k4us2.djjc.sbs&path=%2Fdjjc%2Fus2#%F0%9F%87%BA%F0%9F%87%B8%E7%BE%8E%E5%9B%BD2%E5%8F%B7-0.1%E5%80%8D
+vless://1e7209b2-adfb-46b2-b06c-04c5e69dd625@77.75.199.163:443?encryption=none&security=tls&sni=k11us3.djjc.sbs&fp=ios&type=ws&host=k11us3.djjc.sbs&path=%2Fdjjc%2Fus3#%F0%9F%87%BA%F0%9F%87%B8%E7%BE%8E%E5%9B%BD3%E5%8F%B7-0.1%E5%80%8D
+vless://1e7209b2-adfb-46b2-b06c-04c5e69dd625@77.75.199.163:443?encryption=none&security=tls&sni=k5jp1.djjc.sbs&fp=safari&type=ws&host=k5jp1.djjc.sbs&path=%2Fdjjc%2Fjp1#%F0%9F%87%AF%F0%9F%87%B5%E6%97%A5%E6%9C%AC-0.1%E2%80%94%E6%B5%81%E5%AA%92%E4%BD%93
+vless://1e7209b2-adfb-46b2-b06c-04c5e69dd625@77.75.199.163:443?encryption=none&security=tls&sni=k10sg1.djjc.sbs&fp=safari&type=ws&host=k10sg1.djjc.sbs&path=%2Fdjjc%2Fsg1#%F0%9F%87%B8%F0%9F%87%AC%E6%96%B0%E5%8A%A0%E5%9D%A1-0.1%E2%80%94%E5%A5%88%E9%A3%9E
+vless://1e7209b2-adfb-46b2-b06c-04c5e69dd625@77.75.199.163:443?encryption=none&security=tls&sni=k2fr1.djjc.sbs&fp=ios&type=ws&host=k2fr1.djjc.sbs&path=%2Fdjjc%2Ffr1#%F0%9F%87%AB%F0%9F%87%B7%E6%B3%95%E5%9B%BD
+vless://1e7209b2-adfb-46b2-b06c-04c5e69dd625@77.75.199.163:443?encryption=none&security=tls&sni=kfr2.djjc.sbs&fp=safari&type=ws&host=kfr2.djjc.sbs&path=%2Fdjjc%2Ffr2#%F0%9F%87%AB%F0%9F%87%B7%E6%B3%95%E5%9B%BD2
+vless://1e7209b2-adfb-46b2-b06c-04c5e69dd625@77.75.199.163:443?encryption=none&security=tls&sni=k10de1.djjc.sbs&fp=ios&type=ws&host=k10de1.djjc.sbs&path=%2Fdjjc%2Fde1#%F0%9F%87%A9%F0%9F%87%AA%E5%BE%B7%E5%9B%BD-gpt
+vless://1e7209b2-adfb-46b2-b06c-04c5e69dd625@c8217-b2a.h1.49d2.5e11.613.b297.djjsvip.cfd:443?encryption=none&flow=xtls-rprx-vision&security=tls&sni=djdownloadtw1.xn--4gq62f52gopi49k.com&fp=safari&type=tcp&headerType=none#%F0%9F%87%B9%F0%9F%87%BC%E5%8F%B0%E6%B9%BE%E2%80%94TK%E4%B8%93%E7%BA%BF
+vless://1e7209b2-adfb-46b2-b06c-04c5e69dd625@c8217-b2a.h2.49d2.5e11.613.b297.djjsvip.cfd:443?encryption=none&flow=xtls-rprx-vision&security=tls&sni=djdownloadhk1.xn--4gq62f52gopi49k.com&fp=safari&type=tcp&headerType=none#%F0%9F%87%AD%F0%9F%87%B0%E9%A6%99%E6%B8%AFhkt-2%E5%80%8D%E7%8E%87
+vless://1e7209b2-adfb-46b2-b06c-04c5e69dd625@c8217-b2a.h3.49d2.5e11.613.b297.djjsvip.cfd:443?encryption=none&flow=xtls-rprx-vision&security=tls&sni=djdownloadhk2.xn--4gq62f52gopi49k.com&fp=safari&type=tcp&headerType=none#%F0%9F%87%AD%F0%9F%87%B0%E9%A6%99%E6%B8%AFhkt2-1.8%E5%80%8D%E7%8E%87
+
+
 `
 
 let urls = [];
 let subconverter = "apiurl.v1.mk"; //在线订阅转换后端，目前使用肥羊的订阅转换功能。支持自建psub 可自行搭建https://github.com/bulianglin/psub
-let subconfig = "https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/config/ACL4SSR_Online_MultiCountry.ini"; //订阅配置文件
+let subconfig = "https://raw.githubusercontent.com/suibianmFDke5/edgetunnel/main/Clash/config/ACL4SSR_Online_Full_NoKer.ini?token=GHSAT0AAAAAACQBCZ5K2EISVDFHXEFK3BMUZQAACQA"; //订阅配置文件
 
 export default {
 	async fetch (request,env) {
@@ -43,8 +81,8 @@ export default {
 		const fakeToken = await MD5MD5(`${mytoken}${timeTemp}`);
 		//console.log(`${fakeUserID}\n${fakeHostName}`); // 打印fakeID
 
-		let UD = Math.floor(((timestamp - Date.now())/timestamp * total * 1099511627776 )/2);
-		total = total * 1099511627776 ;
+		let UD = Math.floor(((timestamp - Date.now())/timestamp * 99 * 1099511627776 * 1024)/2);
+		total = total * 1099511627776 * 1024;
 		let expire= Math.floor(timestamp / 1000) ;
 		SUBUpdateTime = env.SUBUPTIME || SUBUpdateTime;
 
@@ -95,54 +133,44 @@ export default {
 	
 			const timeout = setTimeout(() => {
 				controller.abort(); // 取消所有请求
-			}, 2000); // 2秒后触发
+			}, 1618); // 1.618秒后触发
 	
-
-			let 追加UA = 'v2rayn';
-			if (url.searchParams.has('clash')){
-				追加UA = 'clash';
-			} else if(url.searchParams.has('singbox')){
-				追加UA = 'singbox';
-			}
-			
 			try {
 				const responses = await Promise.allSettled(urls.map(url =>
 					fetch(url, {
 						method: 'get',
 						headers: {
 							'Accept': 'text/html,application/xhtml+xml,application/xml;',
-							'User-Agent': `${追加UA} cmliu/CF-Workers-SUB ${userAgentHeader}`
+							'User-Agent': `v2rayn cmliu/CF-Workers-SUB ${userAgentHeader}`
 						},
 						signal: controller.signal // 将AbortController的信号量添加到fetch请求中，以便于需要时可以取消请求
 					}).then(response => {
 						if (response.ok) {
 							return response.text().then(content => {
 								// 这里可以顺便做内容检查
-								if (content.includes('dns') && content.includes('proxies') && content.includes('proxy-groups')) {
+								if (content.includes('dns') && content.includes('proxies') && content.includes('proxy-groups') && content.includes('rules')) {
 									//console.log("clashsub: " + url);
 									订阅转换URL += "|" + url;
-								} else if (content.includes('dns') && content.includes('outbounds') && content.includes('inbounds')){
+								} else if  (content.includes('dns') && content.includes('outbounds') && content.includes('inbounds')){
 									//console.log("singboxsub: " + url);
 									订阅转换URL += "|" + url;
 								} else {
-									//console.log("未识别" + url);
 									return content; // 保证链式调用中的下一个then可以接收到文本内容
 								}
-								//console.log(content);
 							});
 						} else {
 							return ""; // 如果response.ok为false，返回空字符串
 						}
 					})
 				));	
-			
+				//console.log(responses);
 				for (const response of responses) {
-					if (response.status === 'fulfilled' && response.value) {
-						const content = response.value;
+					if (response.status === 'fulfilled') {
+						const content = await response.value;
 						req_data += base64Decode(content) + '\n';
 					}
 				}
-			
+
 			} catch (error) {
 				//console.error(error);
 			} finally {
@@ -159,10 +187,9 @@ export default {
 			const uniqueLines = new Set(text.split('\n'));
 			const result = [...uniqueLines].join('\n');
 			console.log(result);
-			
 			const base64Data = btoa(result);
 
-			if (订阅格式 == 'base64' || token == fakeToken){
+			if (订阅格式 == 'base64'){
 				return new Response(base64Data ,{
 					headers: { 
 						"content-type": "text/plain; charset=utf-8",
@@ -175,7 +202,7 @@ export default {
 			} else if (订阅格式 == 'singbox'){
 				subconverterUrl = `https://${subconverter}/sub?target=singbox&url=${encodeURIComponent(订阅转换URL)}&insert=false&config=${encodeURIComponent(subconfig)}&emoji=true&list=false&tfo=false&scv=true&fdn=false&sort=false&new_name=true`;
 			}
-			console.log(订阅转换URL);
+
 			try {
 				const subconverterResponse = await fetch(subconverterUrl);
 				
@@ -190,7 +217,7 @@ export default {
 					//throw new Error(`Error fetching subconverterUrl: ${subconverterResponse.status} ${subconverterResponse.statusText}`);
 				}
 				let subconverterContent = await subconverterResponse.text();
-				if (订阅格式 == 'clash') subconverterContent =await clashFix(subconverterContent);
+	
 				return new Response(subconverterContent, {
 					headers: { 
 						"Content-Disposition": `attachment; filename*=utf-8''${encodeURIComponent(FileName)}; filename=${FileName}`,
@@ -295,29 +322,4 @@ async function MD5MD5(text) {
 	const secondHex = secondPassArray.map(b => b.toString(16).padStart(2, '0')).join('');
   
 	return secondHex.toLowerCase();
-}
-
-function clashFix(content) {
-	if(content.includes('wireguard') && !content.includes('remote-dns-resolve')){
-		let lines;
-		if (content.includes('\r\n')){
-			lines = content.split('\r\n');
-		} else {
-			lines = content.split('\n');
-		}
-	
-		let result = "";
-		for (let line of lines) {
-			if (line.includes('type: wireguard')) {
-				const 备改内容 = `, mtu: 1280, udp: true`;
-				const 正确内容 = `, mtu: 1280, remote-dns-resolve: true, udp: true`;
-				result += line.replace(new RegExp(备改内容, 'g'), 正确内容) + '\n';
-			} else {
-				result += line + '\n';
-			}
-		}
-
-		content = result;
-	}
-	return content;
 }
